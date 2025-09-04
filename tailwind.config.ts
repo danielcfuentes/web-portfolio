@@ -61,7 +61,8 @@ const config: Config = {
         'gray-text': '#374151',
         'gray-card': '#f9fafb',
         'gray-border': '#e5e7eb',
-        'gray-dark': '#111827'
+        'gray-dark': '#111827',
+        'gray-light': '#f3f4f6'
       },
       borderRadius: {
         lg: 'var(--radius)',

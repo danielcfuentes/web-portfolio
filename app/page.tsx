@@ -1,6 +1,5 @@
 "use client"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ThemeProvider } from "next-themes"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { Experience } from "@/components/experience"
@@ -15,81 +14,79 @@ export default function Portfolio() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <div className="min-h-screen bg-white dark:bg-gray-dark text-gray-text dark:text-gray-light">
-        <Navigation />
-        <ThemeToggle />
+    <div className="min-h-screen bg-white dark:bg-gray-dark text-gray-text dark:text-gray-light">
+      <Navigation />
+      <ThemeToggle />
 
-        {/* Animated Background Elements */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-primary/5 dark:bg-emerald-secondary/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-          <motion.div
-            className="absolute top-3/4 right-1/4 w-96 h-96 bg-chart-blue/5 dark:bg-chart-blue/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, -100, 0],
-              y: [0, 100, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/2 w-96 h-96 bg-chart-indigo/5 dark:bg-chart-indigo/10 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-        </div>
-
-        {/* Hero Section */}
-        <motion.section style={{ opacity }} className="min-h-screen relative overflow-hidden">
-          <Hero />
-        </motion.section>
-
-        {/* About Section */}
-        <section id="about" className="py-12 md:py-20 bg-gray-card/30 dark:bg-gray-dark/50">
-          <About />
-        </section>
-
-        {/* Experience Section */}
-        <section id="experience" className="py-12 md:py-20 bg-white dark:bg-gray-dark">
-          <Experience />
-        </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-12 md:py-20 bg-gray-card/30 dark:bg-gray-dark/50">
-          <Projects />
-        </section>
-
-        {/* Leadership Section */}
-        <section id="leadership" className="py-12 md:py-20 bg-white dark:bg-gray-dark">
-          <Leadership />
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="py-12 md:py-20 bg-gray-card/30 dark:bg-gray-dark/50">
-          <Contact />
-        </section>
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-primary/5 dark:bg-emerald-secondary/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -100, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+        <motion.div
+          className="absolute top-3/4 right-1/4 w-96 h-96 bg-chart-blue/5 dark:bg-chart-blue/10 rounded-full blur-3xl"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, 100, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-96 h-96 bg-chart-indigo/5 dark:bg-chart-indigo/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
       </div>
-    </ThemeProvider>
+
+      {/* Hero Section */}
+      <motion.section style={{ opacity }} className="min-h-screen relative overflow-hidden">
+        <Hero />
+      </motion.section>
+
+      {/* About Section */}
+      <section id="about" className="py-12 md:py-20 bg-gray-card/30 dark:bg-gray-dark/50">
+        <About />
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-12 md:py-20 bg-white dark:bg-gray-dark">
+        <Experience />
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-12 md:py-20 bg-gray-card/30 dark:bg-gray-dark/50">
+        <Projects />
+      </section>
+
+      {/* Leadership Section */}
+      <section id="leadership" className="py-12 md:py-20 bg-white dark:bg-gray-dark">
+        <Leadership />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-12 md:py-20 bg-gray-card/30 dark:bg-gray-dark/50">
+        <Contact />
+      </section>
+    </div>
   )
 }
